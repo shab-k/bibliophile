@@ -10,7 +10,7 @@ class SearchResult extends Component {
       .then(res => {
         console.log(res.data.results.books);
         this.setState({
-          books: res.data.results.books.slice(0,5)
+          books: res.data.results.books.slice(0,10)
         });
       })
   }
@@ -21,7 +21,7 @@ class SearchResult extends Component {
         return (
           <div className="book card" key={index}>
             <div className="card-content">
-              <span className="card-title">{book.title}</span>
+              <h3 className="card-title">{book.title}</h3>
               <p>{book.description}</p>
               <p>Author: {book.author}</p>
             </div>
