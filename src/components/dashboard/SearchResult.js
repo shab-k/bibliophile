@@ -21,7 +21,7 @@ class SearchResult extends Component {
         return (
           <div className="book card" key={index}>
             <div className="card-content">
-              <h3 className="card-title">{book.title}</h3>
+              <h3 className="card-title blue-text">{book.title}</h3>
               <p>{book.description}</p>
               <p>Author: {book.author}</p>
             </div>
