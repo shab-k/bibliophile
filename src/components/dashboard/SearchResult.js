@@ -19,13 +19,23 @@ class SearchResult extends Component {
     const bookList = books.length ? (
       books.map((book, index) => {
         return (
-          <div className="book card" key={index}>
-            <div className="card-content">
-              <h3 className="card-title blue-text">{book.title}</h3>
-              <p>{book.description}</p>
-              <p>Author: {book.author}</p>
-            </div>
-          </div>
+ 
+   
+      <div className="book card" key={index}>
+
+        <div className="card-image">
+          <img src={book.book_image} alt="cover" />
+         
+        </div>
+        <div className="card-content">
+        <span className="card-title">{book.title}</span>
+          <p>{book.description}</p>
+        </div>
+        <div className="card-action">
+        <p>Author: {book.author}</p>
+        </div>
+      </div>
+   
         )
       })
     ) : (
