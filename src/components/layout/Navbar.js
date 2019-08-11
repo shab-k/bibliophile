@@ -5,6 +5,7 @@ const Navbar = () => {
   return (
     <nav className="nav-wrapper indigo darken-4">
       <div className="container">
+        <span className="logo-icon"><i className="fas fa-book"></i></span>
         <Link className="brand-logo" to="/">Bibliophile</Link>
         <ul className="right">
           <li><NavLink exact to="/">Home</NavLink></li>
