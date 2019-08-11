@@ -63,7 +63,7 @@ class SearchResult extends Component {
             <div className="card-content">
               <span className="card-title">{book.title}</span>
               <p>{book.description}</p>
-              <br/>
+       
               <p><span className="author">Author: </span>{book.author}</p>
             </div>
 

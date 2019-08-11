@@ -1,3 +1,6 @@
+/* ---
+Designed & developed by Shabnam-k
+---- */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -56,4 +59,29 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
 }
 .logo-icon{
   padding: 10px;
+}
+
+/* --------- Media Query --------- */
+@media screen and (max-width: 600px) {
+  h4 {
+    font-size: 2.0rem;
+}
+  .card .card-title {
+    font-size: 1.2em;
+  }
+.card .card-content .card-title {
+    display: inline;
+    line-height: 20px;
+    /* margin-bottom: 0px; */
+}
+  .card.small {
+    height: 350px;
+}
+.add-button {
+  /* padding: 5px 1px; */
+  display: inline-block;
+}
+.card .card-action, .card .card-content {
+  padding: 17px 14px;
+}
 }
