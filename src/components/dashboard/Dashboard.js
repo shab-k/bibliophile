@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import SearchBooks from './SearchBooks'
 import SearchResult from './SearchResult'
-// import Chart from '../lists/Chart'
+
 
 class Dashboard extends Component {
   render() {

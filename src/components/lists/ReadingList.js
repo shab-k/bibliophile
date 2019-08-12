@@ -1,18 +1,42 @@
-import React from 'react'
-import SearchResult from '../dashboard/SearchResult'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-const ReadingList = (props) => {
-  console.log(props)
-  const allBooks = props.readingList.map((book, index) => <Book key={index} book={book}/>)
-
-      return(
-        <div className="reading-list">
-          <div className="ui cards">
-            {allBooks}
+class ReadingList extends Component {
+  render(){
+    const { books } = this.props;
+    const bookList = books.length ? (
+      books.map(book => {
+        return (
+          <div className="book card" key={book.id}>
+            <div className="card-content">
+              <Link to={'/' + book.id}>
+                <span className="card-title red-text">{book.title}</span>
+              </Link>
+              <p>{book.author}</p>
+            </div>
           </div>
+        )
+      })
+    ) : (
+      <div className="center">No books to show</div>
+    );
+
+    return (
+      <div>
+        <div className="container ReadingList">
+          <h4 className="center">ReadingList</h4>
+          {bookList}
         </div>
-      )
+      </div>
+    )
   }
+}
 
-  export default ReadingList
+const mapStateToProps = (state) => {
+  return {
+    books: state.books
+  }
+}
 
+export default connect(mapStateToProps)(ReadingList)
