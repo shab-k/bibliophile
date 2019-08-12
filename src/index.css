@@ -60,7 +60,10 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
 .logo-icon{
   padding: 10px;
 }
-
+form{
+  padding: 20px;
+  margin: 45px auto;
+}
 /* --------- Media Query --------- */
 @media screen and (max-width: 600px) {
   h4 {

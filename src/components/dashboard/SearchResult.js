@@ -11,7 +11,7 @@ class SearchResult extends Component {
     // searchResults: []
     // ,
     // i: 0,
-    // readingList: []
+    readingList: []
   }
 
   componentDidMount() {
@@ -46,7 +46,17 @@ class SearchResult extends Component {
   //     searchTerm: e.target.value
   //   })
   // }
-
+  handleReadingClick = (e) => {
+    let allBooks = this.state.books
+    let currentReadingList = this.state.readingList
+    let eventId=e.target.parentElement.parentElement.id
+    let book = allBooks.find((eachBook)=> {
+      return eachBook._id === eventId
+    })
+    let newState = [...currentReadingList, book]
+    this.setState({readingList: newState})
+    console.log(this.state.readingList)
+  }
   render() {
     const { books } = this.state
     const bookList = books.length ? (
@@ -70,7 +80,7 @@ class SearchResult extends Component {
           <div className="card-action">
             <a href={book.amazon_product_url} rel="noopener noreferrer" target="_blank"> Buy From Amazon</a>
             
-            <a href="#" className="btn-floating btn-small waves-effect waves-light blue darken-4 right"><i className="material-icons">add</i></a>
+            <a href="#" className="btn-floating btn-small waves-effect waves-light blue darken-4 right" onReadingClick={this.handleReadingClick}><i className="material-icons">add</i></a>
             <span className="add-button right">Add To List</span>
           </div>
           </div>
