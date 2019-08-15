@@ -41,7 +41,7 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
   font-weight: 400;
   color: #165baa;
 }
-.dashboard-title{
+.dashboard-title, h4{
   color: #f7f7fc;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
