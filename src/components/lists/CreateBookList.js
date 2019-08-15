@@ -8,8 +8,8 @@ class CreateBookList extends Component {
     title: '',
     author: '',
     genre: '',
-    startdate: null,
-    enddate: null
+    startdate: '',
+    enddate: ''
   }
   handleChange = (e) => {
     this.setState({

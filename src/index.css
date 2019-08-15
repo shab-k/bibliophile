@@ -8,18 +8,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #cfd0d3;
-  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
-  /* background-image: linear-gradient(to right top, #051937, #1c4466, #367396, #56a7c4, #7dddf0); */
-  background-image: linear-gradient(to right top, #11356b, #255a89, #4781a3, #72a7bd, #a3ced7);
-  background-image: linear-gradient(to right top, #f70f31, #f3359c, #b077e5, #499ef6, #1ab3db);
-  /* background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%); */
-background: rgb(20,14,125);
-background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%);
-/* background: rgb(20,14,125);
-background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(0,255,85,1) 100%); */
-  
+  background: rgb(20,14,125);
+  background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%);
 }
 
 code {
@@ -29,19 +19,18 @@ code {
 .nav-wrapper{
   background: rgb(20,14,125);
 background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%);
-/* background: rgb(20,14,125);
-background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(0,255,85,1) 100%); */
 
 }
 .card .card-image img {
   width: 100%;
   height: 400px;
 }
+
 .card .card-title {
   font-weight: 400;
   color: #165baa;
 }
-.dashboard-title, h4{
+.dashboard-title, h4, h5{
   color: #f7f7fc;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
@@ -51,7 +40,7 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
   transition: color .3s ease;
   text-transform: uppercase;
 }
-.author{
+.author, .list-titles{
   font-weight: bold;
 }
 .add-button{
@@ -63,6 +52,9 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
 form{
   padding: 20px;
   margin: 45px auto;
+}
+.book-list{
+  margin: 20px 0;
 }
 /* --------- Media Query --------- */
 @media screen and (max-width: 600px) {

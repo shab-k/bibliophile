@@ -12,12 +12,13 @@ class Dashboard extends Component {
     
     return (
       <div className="dashboard container">
+      <h4>Reading List</h4>
         <div className="row">
           <div className="col s12 m6">
             <BookList books={books} />
           </div>
           <div className="col s12 m5 offset-m1">
-           
+           <h5>Charts</h5>
           </div>
         </div>
       </div>
