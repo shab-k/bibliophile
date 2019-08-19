@@ -56,6 +56,9 @@ form{
 .book-list{
   margin: 20px 0;
 }
+canvas{
+  padding: 30px;
+}
 /* --------- Media Query --------- */
 @media screen and (max-width: 600px) {
   h4 {
