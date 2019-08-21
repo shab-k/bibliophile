@@ -2,35 +2,72 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createBookList } from '../../store/actions/bookListActions'
 import M from 'materialize-css';
+import moment from "moment";
+import { DatePicker } from 'react-materialize';
+
 
 class CreateBookList extends Component {
+  // handleDateChange = this.handleDateChange.bind(this);
+  
   state = {
     title: '',
     author: '',
     genre: '',
+    // startdate: {},
+    enddate: '',
     startdate: '',
-    enddate: ''
+    format: "ddd d, mmm",
+    formatMoment: "ddd D, MMM"
+    
   }
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
     })
   }
+  // handleDateChange(e){
+    
+  //   this.setState({
+  //     // startDate: { ...this.state.startDate, date: e.select }
+  //     startdate: this.state.date
+  //   })
+  // }
   handleSubmit = (e) => {
     e.preventDefault();
     // console.log(this.state);
     this.props.createBookList(this.state)
   }
+  handleSelect = (enddate) =>{
+    let context = this;
+    context.setState({
+      enddate: enddate
+    })
+console.log(enddate); 
+  }
   
   componentDidMount() {
+    var context = this;
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.datepicker');
-      var options = {}
-      var instances = M.Datepicker.init(elems, options);
+      M.Datepicker.init(elems, {
+        defaultDate: new Date(),
+        container: "body",
+        onSelect: function(startdate) {
+          context.setState({
+                startdate: startdate
+              })
+          console.log(startdate); // Selected date is logged
+        },
+       
+        autoClose: true
+      });
+    
     });
+   
 }
 
   render() {
+   
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -48,13 +85,14 @@ class CreateBookList extends Component {
             <label htmlFor="genre">Genre</label>
           </div>
           <div className="input-field">
-            <input type="text" id='startdate' className="datepicker" onChange={this.handleChange} />
+            <DatePicker id="startdate" type="text" className="datepicker dateset" />
             <label htmlFor="startdate">Start Reading Date</label>
           </div>
           <div className="input-field">
-            <input type="text" id='enddate' className="datepicker" onChange={this.handleChange} />
+            <DatePicker id="enddate" type="text" onSelect={this.handleSelect} className="datepicker dateset" />
             <label htmlFor="enddate">End Reading Date</label>
           </div>
+          
           
           
           <div className="input-field">

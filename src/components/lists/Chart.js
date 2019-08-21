@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bar, Pie, Doughnut } from 'react-chartjs-2';
+// import { Bar, Pie, Doughnut } from 'react-chartjs-2';
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
@@ -74,7 +74,7 @@ db.collection('books').orderBy('genre').onSnapshot(res => {
 });
     return (
       <div className="chart">
-        <Bar
+        {/* <Bar
           data={this.state.chartData}
           options={{
             
@@ -83,7 +83,7 @@ db.collection('books').orderBy('genre').onSnapshot(res => {
               position:this.props.legendPosition
             }
           }}
-        />
+        /> */}
       </div>
     )
   }
