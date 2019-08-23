@@ -1,9 +1,5 @@
-// import React, { Component } from 'react'
 import React from 'react'
-// import { Link } from 'react-router-dom'
-// import { connect } from 'react-redux'
-// import { firestoreConnect } from 'react-redux-firebase'
-// import { compose } from 'redux'
+import { Link } from 'react-router-dom'
 import BookSummary from './B‌ookSummary'
 // import { fetchBooks } from '../../store/actions/BookListActions';
 
@@ -25,7 +21,9 @@ import BookSummary from './B‌ookSummary'
           <div className="book-list section">
             { books && books.map(book => {
               return (
+                <Link to={'/book/' + book.id} key={book.id}>
                 <BookSummary book={book} key={book.id} />
+                </Link>
               )
             })}  
           </div>

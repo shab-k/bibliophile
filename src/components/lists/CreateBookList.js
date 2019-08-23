@@ -2,24 +2,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createBookList } from '../../store/actions/bookListActions'
 import M from 'materialize-css';
-import moment from "moment";
+// import moment from "moment";
 import { DatePicker } from 'react-materialize';
 
 
 class CreateBookList extends Component {
-  // handleDateChange = this.handleDateChange.bind(this);
-  
+ 
   state = {
     title: '',
     author: '',
     genre: '',
-    // startdate: {},
-    enddate: '',
     startdate: '',
-    format: "ddd d, mmm",
-    formatMoment: "ddd D, MMM"
-    
+    enddate: ''
   }
+  
   handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value
@@ -34,27 +30,31 @@ class CreateBookList extends Component {
   // }
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
-    this.props.createBookList(this.state)
+    console.log(this.state);
+    this.props.createBookList(this.state);
+    this.props.history.push('/dashboard');
   }
-  handleSelect = (enddate) =>{
-    let context = this;
-    context.setState({
-      enddate: enddate
-    })
-console.log(enddate); 
-  }
+//   handleSelect = (enddate) =>{
+//     let context = this;
+//     context.setState({
+//       enddate: enddate
+//     })
+// console.log(enddate); 
+//   }
   
   componentDidMount() {
     var context = this;
     document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.datepicker');
+      var elems = document.querySelectorAll('.dateset');
       M.Datepicker.init(elems, {
-        defaultDate: new Date(),
+        // defaultDate: new Date(),
+        // format: this.state.format,
         container: "body",
         onSelect: function(startdate) {
           context.setState({
-                startdate: startdate
+              ...context.state.startdate,
+              startdate: startdate
+          
               })
           console.log(startdate); // Selected date is logged
         },
@@ -63,11 +63,30 @@ console.log(enddate);
       });
     
     });
-   
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.datepicker');
+      M.Datepicker.init(elems, {
+        // defaultDate: new Date(),
+        // format: this.state.format,
+        container: "body",
+        onSelect: function(enddate) {
+          context.setState({
+              ...context.state.enddate,
+              enddate: enddate
+          
+              })
+          console.log(enddate); // Selected date is logged
+        },
+       
+        autoClose: true
+      });
+    
+    });
+    
 }
 
   render() {
-   
+    
     return (
       <div className="container">
         <form className="white" onSubmit={this.handleSubmit}>
@@ -85,11 +104,11 @@ console.log(enddate);
             <label htmlFor="genre">Genre</label>
           </div>
           <div className="input-field">
-            <DatePicker id="startdate" type="text" className="datepicker dateset" />
+            <DatePicker id="startdate" type="text" className="dateset"  />
             <label htmlFor="startdate">Start Reading Date</label>
           </div>
           <div className="input-field">
-            <DatePicker id="enddate" type="text" onSelect={this.handleSelect} className="datepicker dateset" />
+            <DatePicker id="enddate" type="text" className="datepicker" />
             <label htmlFor="enddate">End Reading Date</label>
           </div>
           
@@ -100,8 +119,11 @@ console.log(enddate);
           </div>
         </form>
       </div>
+      
     )
+    
   }
+  
 }
 
 // const mapDispatchToProps = dispatch => {

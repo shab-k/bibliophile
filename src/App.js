@@ -5,6 +5,7 @@ import Home from './components/dashboard/Home'
 import CreateBookList from './components/lists/CreateBookList'
 // import BookList from './components/lists/BookList'
 import Dashboard from './components/dashboard/Dashboard'
+import BookDetails from './components/lists/BookDetails'
 // import store from './store';
 // import { Provider } from 'react-redux';
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/create' component={CreateBookList} />
+            <Route path='/book/:id' component={BookDetails} />
             {/* <Route path='/book-list' component={BookList} /> */}
              <Route path='/dashboard' component={Dashboard} />
           </Switch>
