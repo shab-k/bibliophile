@@ -7,13 +7,13 @@ import { DatePicker } from 'react-materialize';
 
 
 class CreateBookList extends Component {
- 
+  
   state = {
     title: '',
     author: '',
     genre: '',
-    startdate: '',
-    enddate: ''
+    startDate: '',
+    endDate: ''
   }
   
   handleChange = (e) => {
@@ -21,61 +21,43 @@ class CreateBookList extends Component {
       [e.target.id]: e.target.value
     })
   }
-  // handleDateChange(e){
-    
-  //   this.setState({
-  //     // startDate: { ...this.state.startDate, date: e.select }
-  //     startdate: this.state.date
-  //   })
-  // }
   handleSubmit = (e) => {
     e.preventDefault();
+    e.target.reset();
     console.log(this.state);
     this.props.createBookList(this.state);
     this.props.history.push('/dashboard');
   }
-//   handleSelect = (enddate) =>{
-//     let context = this;
-//     context.setState({
-//       enddate: enddate
-//     })
-// console.log(enddate); 
-//   }
   
   componentDidMount() {
     var context = this;
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.dateset');
       M.Datepicker.init(elems, {
-        // defaultDate: new Date(),
-        // format: this.state.format,
         container: "body",
-        onSelect: function(startdate) {
+        onSelect: function(startDate) {
           context.setState({
-              ...context.state.startdate,
-              startdate: startdate
+              ...context.state.startDate,
+              startDate: startDate
           
               })
-          console.log(startdate); // Selected date is logged
+          console.log(startDate); // Selected date is logged
         },
-       
-        autoClose: true
+       autoClose: true
       });
     
     });
     document.addEventListener('DOMContentLoaded', function() {
       var elems = document.querySelectorAll('.datepicker');
       M.Datepicker.init(elems, {
-        // defaultDate: new Date(),
-        // format: this.state.format,
         container: "body",
-        onSelect: function(enddate) {
+        onSelect: function(endDate) {
           context.setState({
-              ...context.state.enddate,
-              enddate: enddate
+              ...context.state.endDate,
+              endDate: endDate
           
               })
-          console.log(enddate); // Selected date is logged
+          console.log(endDate); // Selected date is logged
         },
        
         autoClose: true
@@ -89,7 +71,7 @@ class CreateBookList extends Component {
     
     return (
       <div className="container">
-        <form className="white" onSubmit={this.handleSubmit}>
+        <form className="white add-book" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Add A New Book</h5>
           <div className="input-field">
             <input type="text" id='title' onChange={this.handleChange} />
@@ -104,16 +86,14 @@ class CreateBookList extends Component {
             <label htmlFor="genre">Genre</label>
           </div>
           <div className="input-field">
-            <DatePicker id="startdate" type="text" className="dateset"  />
-            <label htmlFor="startdate">Start Reading Date</label>
+            <DatePicker id='startDate' onChange={this.handleChange} type="text" className="dateset" />
+            <label htmlFor="startDate">Start Reading Date</label>
           </div>
           <div className="input-field">
-            <DatePicker id="enddate" type="text" className="datepicker" />
-            <label htmlFor="enddate">End Reading Date</label>
+            <DatePicker id='endDate' onChange={this.handleChange} type="text" className="datepicker" />
+            <label htmlFor="endDate">End Reading Date</label>
           </div>
-          
-          
-          
+          {/* Button */}
           <div className="input-field">
             <button className="btn indigo darken-4">Create</button>
           </div>
@@ -126,11 +106,6 @@ class CreateBookList extends Component {
   
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     createBookList: (books) => dispatch(createBookList(books))
-//   }
-// }
 const mapDispatchToProps = dispatch => {
   return {
     createBookList: (book) => dispatch(createBookList(book))

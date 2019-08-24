@@ -1,6 +1,11 @@
 /* ---
 Designed & developed by Shabnam-k
 ---- */
+
+*:before,
+*:after {
+ box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,8 +15,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgb(20,14,125);
   background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%);
-}
+  height: 100%;
+  position: relative;
 
+}
+.App{
+  min-height: 100vh; 
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px;
+  /* min-height: 100%; */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -25,11 +40,16 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
   width: 100%;
   height: 400px;
 }
-
+.add-book{
+  width: 60%;
+}
 .card .card-title {
   font-size: 24px;
   font-weight: 400;
   color: #165baa;
+}
+.card .card-content {
+  padding: 10px 15px;
 }
 .dashboard-title, h4, h5{
   color: #f7f7fc;
@@ -60,6 +80,23 @@ form{
 }
 canvas{
   padding: 30px;
+}
+footer{
+  background-color: #000;
+  color: #fff;
+  position:absolute;
+left:0;
+bottom:0;
+right:0;
+
+}
+.fa-heart{
+  color: #f06292 ;
+  padding: 0 5px;
+}
+.fa-mug-hot{
+  color: #47a868 ;
+  padding: 0 5px;
 }
 /* --------- Media Query --------- */
 @media screen and (max-width: 600px) {

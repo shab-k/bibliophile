@@ -4,8 +4,8 @@ export const createBookList = (book) => {
     const firestore = getFirestore();
     firestore.collection('books').add({
       ...book,
-      authorFirstName: 'Shabi',
-      authorLastName: 'Ninja',
+      userFirstName: 'Shabi',
+      userLastName: 'Kimi',
       authorId: 12345,
       createdAt: new Date()
     }).then(() => {

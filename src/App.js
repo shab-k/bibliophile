@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 import Home from './components/dashboard/Home'
 import CreateBookList from './components/lists/CreateBookList'
 // import BookList from './components/lists/BookList'
@@ -13,8 +14,10 @@ class App extends Component {
     return (
     
       <BrowserRouter>
+
         <div className="App">
           <Navbar />
+
           <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/create' component={CreateBookList} />
@@ -22,7 +25,10 @@ class App extends Component {
             {/* <Route path='/book-list' component={BookList} /> */}
              <Route path='/dashboard' component={Dashboard} />
           </Switch>
+
+          <Footer />
         </div>
+
       </BrowserRouter>
     );
   }
