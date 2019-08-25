@@ -57,17 +57,17 @@ class Dashboard extends Component {
     return (
       <div className="dashboard container">
       
-        <div className="row">
+        {/* <div className="row"> */}
         <h4>Reading List</h4>
           {/* <div className="col s12 m6"> */}
             <BookList books={books} />
           {/* </div> */}
-          <h4 className="chart-title">Reading Tracker Chart</h4>
+          {/* <h4 className="chart-title">Reading Tracker Chart</h4> */}
           {/* <div className="col s12 m5 offset-m1 white"> */}
           
            {/* <Chart chartData={this.state.chartData} legendPosition="bottom" /> */}
           {/* </div> */}
-        </div>
+        {/* </div> */}
       </div>
     )
   }

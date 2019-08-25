@@ -17,13 +17,13 @@ class CreateBookList extends Component {
   }
   
   handleChange = (e) => {
+    console.log(e);
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value 
     })
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    e.target.reset();
     console.log(this.state);
     this.props.createBookList(this.state);
     this.props.history.push('/dashboard');
@@ -91,9 +91,9 @@ class CreateBookList extends Component {
           </div>
           <div className="input-field">
             <DatePicker id='endDate' onChange={this.handleChange} type="text" className="datepicker" />
-            <label htmlFor="endDate">End Reading Date</label>
+            <label htmlFor="endDate">Finish Reading Date</label>
           </div>
-          {/* Button */}
+        
           <div className="input-field">
             <button className="btn indigo darken-4">Create</button>
           </div>

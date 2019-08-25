@@ -4,11 +4,9 @@ import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import Home from './components/dashboard/Home'
 import CreateBookList from './components/lists/CreateBookList'
-// import BookList from './components/lists/BookList'
 import Dashboard from './components/dashboard/Dashboard'
 import BookDetails from './components/lists/BookDetails'
-// import store from './store';
-// import { Provider } from 'react-redux';
+
 class App extends Component {
   render() {
     return (
@@ -22,7 +20,6 @@ class App extends Component {
             <Route exact path='/' component={Home}/>
             <Route path='/create' component={CreateBookList} />
             <Route path='/book/:id' component={BookDetails} />
-            {/* <Route path='/book-list' component={BookList} /> */}
              <Route path='/dashboard' component={Dashboard} />
           </Switch>
 
@@ -33,20 +30,5 @@ class App extends Component {
     );
   }
 }
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <div className="App">
-//         <Navbar />
-//         <Switch>
-//           <Route exact path='/' component= />
-//           <Route path='/create' component={CreateBookList} />
-//           <Route path='/book-list' component={BookList} />
-//         </Switch>
-
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
 
 export default App;

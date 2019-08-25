@@ -1,16 +1,34 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { createAPIList } from '../../store/actions/APIListActions'
 
 class SearchResult extends Component {
   state = {
     books: [],
-    readingList: []
+    readingList: [],
+    // title: '',
+    // author: '',
+    // genre: ''
   }
-
+  
+  // handleReadingClick = (e) => {
+  //   e.preventDefault();
+  //   const i = this.state.books.forEach((book, index) => {
+  //     return index
+      
+  //   });
+  //   console.log(i, this.state.books[i]);
+  //   // console.log(this.state.books);
+  //   // console.log(this.state.books.map(book => book.title));
+  //   // this.props.createAPIList(this.state);
+  //   // this.props.createAPIList(this.state.books.map(book => book.title));
+  //   // this.props.history.push('/dashboard');
+  // }
   componentDidMount() {
     axios.get('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=MsaVAAcolptTFAWJtWcwAwKUKpyoqcwL')
       .then(res => {
-        console.log(res.data.results.books);
+        // console.log(res.data.results.books);
         this.setState({
           books: res.data.results.books
           // .slice(0, 10)
@@ -72,9 +90,9 @@ class SearchResult extends Component {
 
           <div className="card-action">
             <a href={book.amazon_product_url} rel="noopener noreferrer" target="_blank"> Buy From Amazon</a>
-            <button onReadingClick={this.handleReadingClick}>
+            {/* <button onClick={this.handleReadingClick}>
               Add to list
-            </button>
+            </button> */}
             {/* <a href="#" className="btn-floating btn-small waves-effect waves-light blue darken-4 right" onReadingClick={this.handleReadingClick}><i className="material-icons">add</i></a>
             <span className="add-button right">Add To List</span> */}
           </div>
@@ -94,5 +112,11 @@ class SearchResult extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    createAPIList: (book) => dispatch(createAPIList(book))
+  }
+}
 
-export default SearchResult
+export default connect(null, mapDispatchToProps)(SearchResult, createAPIList)
+// export default SearchResult

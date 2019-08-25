@@ -8,7 +8,7 @@ const Footer = () => {
       <i className="far fa-copyright"></i> Made With 
       <i className="fas fa-heart" ></i> & 
       <i className="fas fa-mug-hot"></i>
-      By <a className="footer-link" href="https://twitter.com/_manbash"> Shabnam</a>
+      By <a className="footer-link" href="https://shabnam-k.me"> Shabnam</a>
     </div>
    </footer> 
     

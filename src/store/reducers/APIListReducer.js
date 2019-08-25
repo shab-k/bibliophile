@@ -1,6 +1,6 @@
 const initState = {}
 
-const bookListReducer = (state = initState, action) => {
+const APIListReducer = (state = initState, action) => {
   switch (action.type) {
     case 'CREATE_BOOK_LIST_SUCCESS':
       console.log('create reading list success');
@@ -13,4 +13,4 @@ const bookListReducer = (state = initState, action) => {
   }
 };
 
-export default bookListReducer;
+export default APIListReducer;

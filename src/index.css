@@ -15,6 +15,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgb(20,14,125);
   background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%);
+  /* background: rgb(0,0,0); 
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(170,129,156,1) 67%, rgba(170,129,156,1) 100%); */
   height: 100%;
   position: relative;
 
@@ -34,6 +36,8 @@ code {
 .nav-wrapper{
   background: rgb(20,14,125);
 background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rgba(255,0,27,1) 100%);
+/* background: rgb(0,0,0); 
+ background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(170,129,156,1) 67%, rgba(170,129,156,1) 100%); */
 
 }
 .card .card-image img {
@@ -45,11 +49,13 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
 }
 .card .card-title {
   font-size: 24px;
-  font-weight: 400;
+  /* font-weight: 400; */
   color: #165baa;
+  margin-top: 0;
 }
-.card .card-content {
-  padding: 10px 15px;
+#root > div > div > div > div > a > div > div {
+  padding: 14px;
+  border-radius: 0 0 2px 2px;
 }
 .dashboard-title, h4, h5{
   color: #f7f7fc;
@@ -88,7 +94,10 @@ footer{
 left:0;
 bottom:0;
 right:0;
-
+padding: 15px;
+}
+.footer-link{
+  color: #fff;
 }
 .fa-heart{
   color: #f06292 ;
@@ -98,27 +107,40 @@ right:0;
   color: #47a868 ;
   padding: 0 5px;
 }
+.details{
+  color: #aa1616;
+}
 /* --------- Media Query --------- */
 @media screen and (max-width: 600px) {
-  h4 {
-    font-size: 2.0rem;
+  .home-title {
+    font-size: 1.9rem;
 }
-  .card .card-title {
-    font-size: 1.2em;
+#root > div > div > div > div:nth-child(n) > div.card-stacked > div.card-content > span {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 18px;
   }
 .card .card-content .card-title {
     display: inline;
-    line-height: 20px;
+    /* line-height: 20px; */
     /* margin-bottom: 0px; */
 }
+#root > div > div > div > div:nth-child(n) > div.card-stacked > div.card-content {
+  padding: 12px;
+}
   .card.small {
-    height: 350px;
+    width: 100%;
+    height: 650px;
 }
 .add-button {
   /* padding: 5px 1px; */
   display: inline-block;
 }
+.add-book {
+  width: 95%;
+}
 .card .card-action, .card .card-content {
-  padding: 17px 14px;
+  padding: 10px 14px;
+  font-size: .9em;
 }
 }

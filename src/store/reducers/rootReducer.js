@@ -1,10 +1,10 @@
 import bookListReducer from './bookListReducer'
+import APIListReducer from './APIListReducer'
 import { combineReducers } from 'redux'
 import { firestoreReducer } from 'redux-firestore';
 
 const rootReducer = combineReducers({
-  
-  book: bookListReducer,
+  book: bookListReducer, APIListReducer,
   firestore: firestoreReducer
 });
 
