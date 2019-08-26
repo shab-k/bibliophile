@@ -10,8 +10,8 @@ const BookDetails = (props) => {
   
   if (book) {
     return (
-      <div className="container section book-details">
-        <div className="card z-depth-0">
+      <div className="container section details-container">
+        <div className="card book-details z-depth-0">
           <div className="card-content">
             <span className="card-title">{book.title}</span>
             <p><span className="list-titles">Author:</span> {book.author}</p>

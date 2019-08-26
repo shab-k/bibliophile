@@ -47,11 +47,12 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
 .add-book{
   width: 60%;
 }
-.card .card-title {
-  font-size: 24px;
-  /* font-weight: 400; */
+#root > div > div > div > div:nth-child(n) > div.card-stacked > div.card-content > span {
+  font-weight: 400;
   color: #165baa;
-  margin-top: 0;
+}
+#root > div > div > div > a:nth-child(n) > div > div{
+  padding: 5px 15px;
 }
 #root > div > div > div > div > a > div > div {
   padding: 14px;
@@ -70,18 +71,26 @@ background: linear-gradient(90deg, rgba(20,14,125,1) 0%, rgba(9,9,121,1) 35%, rg
 .author, .list-titles{
   font-weight: bold;
 }
+#root > div > div > div > a > div > div > h5, #root > div > div > div > div.card-content > span{
+  color: #165baa;
+  font-weight: 500;
+}
 .add-button{
   padding: 0px 10px;
 }
 .logo-icon{
   padding: 10px;
 }
+#root > div > div > div > div:nth-child(n) > div.card-stacked > div.card-action > a{
+  color: crimson;
+  font-weight: 500;
+}
 form{
   padding: 20px;
   margin: 45px auto;
 }
 .book-list{
-  margin: 20px 0;
+  margin: 0 auto;
   width: 70%;
 }
 canvas{
@@ -109,6 +118,12 @@ padding: 15px;
 }
 .details{
   color: #aa1616;
+  
+}
+.book-details, 
+.details-container{
+  width: 90%;
+  margin: 20 auto;
 }
 /* --------- Media Query --------- */
 @media screen and (max-width: 600px) {

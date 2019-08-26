@@ -26,7 +26,7 @@ class Dashboard extends Component {
   //         {
   //           label:'Number',
   //           data:[1,5,3,4,2,1,2,1,0,3,1,2],
-          
+
   //           backgroundColor:[
   //             'rgba(255, 99, 132, 0.6)',
   //             'rgba(54, 162, 235, 0.6)',
@@ -48,26 +48,16 @@ class Dashboard extends Component {
   //   // console.log(this.state.chartData.datasets[0].data);
   //   // console.log(this.state.chartData.labels);
   // }
-  
+
   render() {
-    
+
     // console.log(this.props);
     const { books } = this.props;
-    
+
     return (
       <div className="dashboard container">
-      
-        {/* <div className="row"> */}
-        <h4>Reading List</h4>
-          {/* <div className="col s12 m6"> */}
-            <BookList books={books} />
-          {/* </div> */}
-          {/* <h4 className="chart-title">Reading Tracker Chart</h4> */}
-          {/* <div className="col s12 m5 offset-m1 white"> */}
-          
-           {/* <Chart chartData={this.state.chartData} legendPosition="bottom" /> */}
-          {/* </div> */}
-        {/* </div> */}
+        <h4 className="center">Reading List</h4>
+        <BookList books={books} />
       </div>
     )
   }

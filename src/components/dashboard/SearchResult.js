@@ -89,7 +89,7 @@ class SearchResult extends Component {
             </div>
 
           <div className="card-action">
-            <a href={book.amazon_product_url} rel="noopener noreferrer" target="_blank"> Buy From Amazon</a>
+            <a className="buy-link" href={book.amazon_product_url} rel="noopener noreferrer" target="_blank"> Buy From Amazon</a>
             {/* <button onClick={this.handleReadingClick}>
               Add to list
             </button> */}
