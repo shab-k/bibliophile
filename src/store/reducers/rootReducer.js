@@ -16,23 +16,4 @@ const rootReducer = combineReducers({
 //   ]
 // }
 
-// const rootReducer = (state = initState, action) => {
-//   combineReducers({
-//     // readingList: bookListReducer,
-//     // firebase: firebaseReducer,
-//     firestore: firestoreReducer
-//   });
-  
-//   switch (action.type) {
-//     case 'CREATE_READING_LIST_SUCCESS':
-//       console.log('create reading list success');
-//       return state;
-//     case 'CREATE_READING_LIST_ERROR':
-//       console.log('create reading list error');
-//       return state;
-//     default:
-//       return state;
-//   }
-// };
-
 export default rootReducer;

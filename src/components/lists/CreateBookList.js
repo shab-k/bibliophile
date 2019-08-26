@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { createBookList } from '../../store/actions/bookListActions'
-import M from 'materialize-css';
-// import moment from "moment";
-import { DatePicker } from 'react-materialize';
+import M from 'materialize-css'
+import { DatePicker } from 'react-materialize'
 
 
 class CreateBookList extends Component {

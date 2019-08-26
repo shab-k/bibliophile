@@ -1,9 +1,9 @@
 import React from 'react'
-import moment from "moment";
+// import moment from "moment";
 
 const BookSummary = ({ book }) => {
   
-  console.log(moment(book.endDate.toDate().toString()).format('MMMM Do YYYY'));
+  // console.log(moment(book.endDate.toDate().toString()).format('MMMM Do YYYY'));
   return (
     <div className="book card z-depth-0 book-summary">
       <div className="card-content grey-text text-darken-3">
