@@ -3,6 +3,7 @@ import axios from 'axios'
 import { connect } from 'react-redux'
 import { createAPIList } from '../../store/actions/APIListActions'
 
+
 class SearchResult extends Component {
   state = {
     books: [],
@@ -25,8 +26,12 @@ class SearchResult extends Component {
   //   // this.props.createAPIList(this.state.books.map(book => book.title));
   //   // this.props.history.push('/dashboard');
   // }
+
   componentDidMount() {
-    axios.get('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=MsaVAAcolptTFAWJtWcwAwKUKpyoqcwL')
+    var config = require('../../config/config');
+    var bookConfig = config.bookConfig.apiKey;
+    
+    axios.get('https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key= '+bookConfig)
       .then(res => {
         // console.log(res.data.results.books);
         this.setState({
