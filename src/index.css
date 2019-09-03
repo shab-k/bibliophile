@@ -160,4 +160,12 @@ padding: 15px;
   padding: 10px 14px;
   font-size: .9em;
 }
+.book-list{
+  width: 95%;
+}
+form{
+  padding: 20px;
+  margin: 45px auto;
+  margin-bottom: 0;
+}
 }
